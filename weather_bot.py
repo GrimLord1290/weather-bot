@@ -1,13 +1,15 @@
+import os
+from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 import requests
 import asyncio
 
-# ВСТАВЬ СВОЙ ТОКЕН ОТ BOTFATHER
-BOT_TOKEN = "8479306800:AAHJMLFn1lXFshCJnNzjcFuZqU9m1uXeV7o"
+load_dotenv()
 
-# ВСТАВЬ СВОЙ КЛЮЧ ОТ OPENWEATHERMAP
-WEATHER_API_KEY = "7b945f1292f655c18e19ddf66e34757a"
+# Токен и ключ берутся из .env
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
